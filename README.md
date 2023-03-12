@@ -1,2 +1,2 @@
 # RUL-Prediction-NASA-dataset
-Produce an example that uses LSTM to predict turbine remaining useful life. 
+This is an example that uses LSTM(based on Pytorch) to predict the remaining useful life of NASA turbine simulation. 
