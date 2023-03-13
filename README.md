@@ -8,4 +8,6 @@ In this example, CNN-LSTM and LSTM only are used to predict the RUL.
 Only FD001 is examined in this example, you can replace whatever you need in NASA dataset but please noting that the useful features need to be re-selected. 
 
 Please cite the following reference if it is helpful for you to learn RUL prediction.
+
+Reference:
   Xu, Zifei, et al. "A Novel Health Indicator for Intelligent Prediction of Rolling Bearing Remaining Useful Life based on Unsupervised Learning Model." Computers & Industrial Engineering (2023): 108999.
