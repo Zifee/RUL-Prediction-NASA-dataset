@@ -208,7 +208,7 @@ if use_cuda:
 device = torch.device('cuda:0' if use_cuda else "cpu")
 net = net.to(device='cuda')
 optimizer = torch.optim.RMSprop(net.parameters(), lr=learning_rate, weight_decay=0, eps=1e-08)
-scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, threshold=1)
+scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, threshold=1, threshold=1, verbose=True, factor=0.9)
 best_model_wts = copy.deepcopy(net.state_dict())
 
 criterion = nn.MSELoss().to(device)
