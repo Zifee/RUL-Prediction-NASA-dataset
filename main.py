@@ -175,7 +175,7 @@ class LSTM(nn.Module):
         self.lstm = nn.LSTM(input_size=num_Features, batch_first=True, hidden_size=num_HiddenUnits,
                             num_layers=numLayers)
         self.fc_1 = nn.Linear(num_HiddenUnits, 50)
-        self.dropout = nn.Dropout(0.5)
+        self.dropout = nn.Dropout(0.2)
         self.fc_2 = nn.Linear(50, 1)
 
     def forward(self, inputs):
@@ -193,14 +193,14 @@ class LSTM(nn.Module):
             h0 = torch.randn(self.numLayer, x.shape[0], self.num_HiddenUnits)
             c0 = torch.randn(self.numLayer, x.shape[0], self.num_HiddenUnits)
         output, (hc, cn) = self.lstm(x, (h0, c0))
+        # output, hc = self.lstm(x, h0)
         pred = self.fc_1(output)
         pred = self.dropout(pred)
         z = self.fc_2(pred)
         return z.squeeze()
 
 
-net = LSTM(num_Features=numFeatures, num_Responses=numResponses,
-           num_HiddenUnits=numHiddenUnits, numLayers=num_Layers)
+net = LSTM(num_Features=numFeatures, num_Responses=numResponses, num_HiddenUnits=numHiddenUnits, numLayers=num_Layers)
 
 use_cuda = torch.cuda.is_available()
 if use_cuda:
@@ -294,6 +294,11 @@ for idx in range(len(XTest)):
     sig = np.std(x, axis=0)
     x = (x - mu) / (sig + np.finfo(float).eps)
     XTest[idx] = x
+    y = YTest[idx]
+    y[np.where(y > thr)[0]] = thr
+    YTest[idx] = y
+
+
 # plot the RUL prediction
 num4plt = np.random.choice(len(XTest), 16, replace=False)
 for idx in range(len(num4plt)):
