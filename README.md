@@ -4,3 +4,6 @@ This is an example that uses LSTM(based on Pytorch) to predict the remaining use
 Following the style of MATLAB tuition, I put all the functions in a file. 
 The dataset you could download from NASA website. 
 In this example, CNN-LSTM and LSTM only are used to predict the RUL. 
+
+Please cite the following reference if it is helpful for you to learning RUL prediction.
+Xu, Zifei, et al. "A Novel Health Indicator for Intelligent Prediction of Rolling Bearing Remaining Useful Life based on Unsupervised Learning Model." Computers & Industrial Engineering (2023): 108999.
