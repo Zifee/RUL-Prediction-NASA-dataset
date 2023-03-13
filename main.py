@@ -249,6 +249,7 @@ for epoch in range(maxEpochs):
                 if val_loss < validation_score:
                     validation_score = val_loss
                     best_model_wts = copy.deepcopy(net.state_dict())
+    scheduler.step(loss)
 
 training_loss = [loss.cpu().detach().numpy() for loss in train_loss_list]
 plt.plot(training_loss)
