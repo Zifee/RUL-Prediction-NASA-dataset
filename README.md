@@ -10,7 +10,7 @@ The example uses LSTM(based on Pytorch) to predict the remaining useful life, by
 In this example, CNN-LSTM and LSTM only are used to predict the RUL.
 Only FD001 is examined in this example, you can replace whatever you need in NASA dataset but please noting that the useful features need to be re-selected. 
 
-Please note that you only need to download the dataset from the NASA and unzip it. 
+Please note that you should need to download the dataset from the NASA and unzip it, the address of which is used to replace the original address as the address of YOUR UNZIPPED FILE on line 14 in the main.py. 
 
 Please cite the following reference if it is helpful for you to learn RUL prediction.
 
