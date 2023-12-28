@@ -1,7 +1,7 @@
 # RUL-Prediction for rotating machinery, using NASA dataset as an example.
 The motivation of this example is to help the practitioner to learn how to use neural network to predict the RUL of rotating machinery. 
 The example uses LSTM(based on Pytorch) to predict the remaining useful life, by using NASA turbofan simulation for examination. 
-  Following the style of MATLAB tuition, I put all the functions in a file. 
+  Following the style of MATLAB tutorial, I put all the functions in a file. 
   The dataset you could download from NASA website. 
   
   
